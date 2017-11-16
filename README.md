@@ -1,2 +1,4 @@
-# InventoryMenu
-A simple plugin to send a chest GUI upon using an item
+# Inv-Menu
+Inventory menu for PocketMine
+<br>
+![](https://thumbs.gfycat.com/ThornyHotAstarte.webp)
