@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace InventoryMenu;
 
 
@@ -113,7 +111,7 @@ class Main extends PluginBase implements Listener
             $player = $e->getPlayer();
             switch ($e->getItem()->getId()) {
                 case Item::COMPASS:
-                    $this->createChest($player, [setItem(0, Item::get(54, 0, 1)->setCustomName("§aStarter Crate")), setItem(1, Item::get(130, 0, 1)->setCustomName("§aMonthly Crate"))], 1, "§aSelect Crate");
+                    $this->createChest($player, [Item::get(54, 0, 1), Item::get(130, 0, 1)], 1, "§aSelect Crate");
                     break;
                 case Item::CLOCK:
                     $this->createChest($player, [Item::get(54, 0, 1)->setCustomName("§6SHOP"), Item::get(61, 0, 1)->setCustomName("§aBuy Ranks")], 2, "§aSelect Menu", true);
@@ -125,7 +123,6 @@ class Main extends PluginBase implements Listener
     public function onPlayerJoin(PlayerJoinEvent $e)
     {
         $inv = $e->getPlayer()->getInventory();
-        $inv->clearAll();
         $inv->setItem(0, Item::get(Item::COMPASS, 0, 1)->setCustomName("§aSelect Crate"));
         $inv->setItem(1, Item::get(Item::CLOCK, 0, 1)->setCustomName("§aSelect Menu"));
     }
